@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+#grafico {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+.eixo {
+  stroke: #ff0000;
+  stroke-width: 1;
+}
+
+.ponto {
+  fill: steelblue;
+  opacity: 0.8;
+}
+
+.ponto:hover {
+  fill: tomato;
+}
+
+
+/* Caixa de informações */
+
+.tooltip {
+  position: fixed;
+  z-index: 10;
+  padding: 0.6rem 0.8rem;
+  background: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 7px 7px 15px #bebebe,
+             -7px -7px 15px #ffffff;
+  font-size: 0.85rem;
+  text-align: left;
+  pointer-events: none;
+}
+
+.tooltip strong {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.tooltip .linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tooltip .cor {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
