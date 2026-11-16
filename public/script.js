@@ -286,8 +286,8 @@ async function comecar() {
 const ROTULOS = {
   topo: "Ryan Carvalho",
   base: "Ghost",
-  esquerda: "Derek Wokatron3000",
-  direita: "Bolsohenrique",
+  esquerda: "Bolsohenrique",
+  direita: "Derek Wokatron3000"
 };
 
 function criar(tag, atributos, texto) {
