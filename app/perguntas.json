@@ -15,6 +15,6 @@
   { "id": 12, "texto": "Converso com frequência sobre pautas sociais, como racismo, gênero e desigualdade.", "eixo": "x", "sentido": 1 },
   { "id": 13, "texto": "Hoje em dia as pessoas se ofendem com coisas demais.", "eixo": "x", "sentido": -1 },
   { "id": 14, "texto": "Prefiro que o humor entre amigos não tenha limite de assunto.", "eixo": "x", "sentido": -1 },
-  { "id": 15, "texto": "Acredito que transexuais são dignos de respeito.", "eixo": "x", "sentido": -1 },
+  { "id": 15, "texto": "Não acredito que transexuais são dignos de respeito.", "eixo": "x", "sentido": -1 },
   { "id": 16, "texto": "Cancelar alguém por algo que disse costuma ser exagero.", "eixo": "x", "sentido": -1 }
 ]
