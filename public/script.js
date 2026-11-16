@@ -290,6 +290,16 @@ const ROTULOS = {
   direita: "Bolsohenrique",
 };
 
+function criar(tag, atributos, texto) {
+  const elemento = document.createElementNS(SVG_NS, tag);
+  for (const [nome, valor] of Object.entries(atributos)) {
+    elemento.setAttribute(nome, valor);
+  }
+  if (texto !== undefined) elemento.textContent = texto;
+  svg.appendChild(elemento);
+  return elemento;
+}
+
 function desenharRotulos() {
   const meio = TAMANHO / 2;
 
