@@ -32,12 +32,13 @@ button { font-size: 1rem; cursor: pointer; }
 #grafico {
   display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   margin: 1rem auto;
-  border: 1px solid #ccc;
-  background: #fafafa;
   cursor: pointer;
 }
+
+.moldura { fill: none; stroke: #bbb; stroke-width: 1; }
+.rotulo { font-size: 13px; font-weight: 600; fill: #444; }
 
 .eixo { stroke: #999; stroke-width: 1; }
 
