@@ -6,55 +6,70 @@ body {
   text-align: center;
 }
 
+.subtitulo { color: #666; }
+
+/* ---------- Botões ---------- */
+button { font-size: 1rem; cursor: pointer; }
+
+.primario {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: steelblue;
+  color: #fff;
+}
+.primario:hover { background: #3a6d94; }
+.primario:disabled { background: #9ab; cursor: wait; }
+
+.secundario {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* ---------- Gráfico ---------- */
 #grafico {
+  display: block;
   width: 100%;
   max-width: 500px;
+  margin: 1rem auto;
   border: 1px solid #ccc;
   background: #fafafa;
+  cursor: pointer;
 }
 
-.eixo {
-  stroke: #ff0000;
-  stroke-width: 1;
+.eixo { stroke: #999; stroke-width: 1; }
+
+.ponto { fill: steelblue; opacity: 0.8; }
+.ponto:hover { stroke: #333; stroke-width: 2; }
+.ponto.meu { stroke: #000; stroke-width: 3; }   /* o seu próprio ponto */
+
+.ponto.novo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: surgir 0.5s ease-out;
+}
+@keyframes surgir {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 0.8; }
 }
 
-.ponto {
-  fill: steelblue;
-  opacity: 0.8;
-}
-
-.ponto:hover {
-  fill: tomato;
-}
-
-
-/* Caixa de informações */
-
+/* ---------- Caixinha do hover ---------- */
 .tooltip {
   position: fixed;
   z-index: 10;
   padding: 0.6rem 0.8rem;
-  background: #e0e0e0;
+  background: #fff;
   border: 1px solid #ccc;
-  border-radius: 15px;
-  box-shadow: 7px 7px 15px #bebebe,
-             -7px -7px 15px #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-size: 0.85rem;
   text-align: left;
   pointer-events: none;
 }
-
-.tooltip strong {
-    display: block;
-    margin-bottom: 0.3rem;
-}
-
-.tooltip .linha {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
+.tooltip strong { display: block; margin-bottom: 0.3rem; }
+.tooltip .linha { display: flex; justify-content: space-between; gap: 1rem; }
 .tooltip .cor {
   display: inline-block;
   width: 0.9rem;
@@ -62,3 +77,74 @@ body {
   border-radius: 50%;
   border: 1px solid #999;
 }
+
+/* ---------- Modal ---------- */
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: min(92vw, 420px);
+  text-align: left;
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+
+.fechar {
+  float: right;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+label { display: block; margin-bottom: 1rem; font-weight: 600; }
+input[type="text"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+input[type="color"] {
+  display: block;
+  margin-top: 0.3rem;
+  width: 3.5rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.aviso { color: #666; font-size: 0.9rem; }
+.erro { color: #b00020; font-size: 0.9rem; }
+
+/* ---------- Perguntas ---------- */
+.progresso {
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#barra {
+  height: 100%;
+  width: 0;
+  background: steelblue;
+  transition: width 0.3s;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.opcao {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+.opcao:hover { background: #f1f5f9; }
+.opcao.marcada { background: #e3eefa; border-color: steelblue; }

@@ -3,16 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coordenadas Liguisticas</title>
+  <title>Coordenadas Ligguisticas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Coordenadas Liguisticas</h1>
+  <h1>Coordenadas Ligguisticas</h1>
+  <p class="subtitulo">Clique no gráfico para participar</p>
+  <button type="button" id="btn-participar" class="primario">Participar</button>
+
   <svg id="grafico" viewBox="0 0 400 400"></svg>
 
   <div id="tooltip" class="tooltip" hidden></div>
 
-  
+  <dialog id="modal">
+    <button type="button" id="modal-fechar" class="fechar" aria-label="Fechar">×</button>
+
+    <!-- Etapa 1: apelido, tag e cor -->
+    <section id="etapa-identidade">
+      <h2 id="titulo-identidade">Participar do mapa</h2>
+      <p id="aviso-edicao" class="aviso" hidden></p>
+
+      <label>Apelido
+        <input type="text" id="campo-apelido" maxlength="20" placeholder="ex.: Ana">
+      </label>
+      <label>Tag (opcional)
+        <input type="text" id="campo-tag" maxlength="4" placeholder="4 letras ou números">
+      </label>
+      <label>Sua cor
+        <input type="color" id="campo-cor" value="#4682b4">
+      </label>
+
+      <p id="erro-identidade" class="erro" hidden></p>
+      <button type="button" id="btn-comecar" class="primario">Começar</button>
+    </section>
+
+    <!-- Etapa 2: perguntas, uma por vez -->
+    <section id="etapa-perguntas" hidden>
+      <div class="progresso"><div id="barra"></div></div>
+      <p id="contador" class="aviso"></p>
+      <h2 id="texto-pergunta"></h2>
+      <div id="opcoes" class="opcoes"></div>
+      <button type="button" id="btn-voltar" class="secundario">Voltar</button>
+    </section>
+
+    <!-- Etapa 3: envio -->
+    <section id="etapa-envio" hidden>
+      <h2>Tudo respondido!</h2>
+      <p>Pronto para colocar o seu ponto no mapa.</p>
+      <p id="erro-envio" class="erro" hidden></p>
+      <button type="button" id="btn-enviar" class="primario">Enviar</button>
+      <button type="button" id="btn-voltar-envio" class="secundario">Voltar</button>
+    </section>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>
