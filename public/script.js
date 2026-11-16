@@ -282,6 +282,32 @@ async function comecar() {
   mostrarPergunta();
 }
 
+// ----- Nomes dos extremos (edite à vontade) -----
+const ROTULOS = {
+  topo: "Ryan Carvalho",
+  base: "Ghost",
+  esquerda: "Derek Wokatron3000",
+  direita: "Bolsohenrique",
+};
+
+function desenharRotulos() {
+  const meio = TAMANHO / 2;
+
+  criar("text", { x: meio, y: -10, "text-anchor": "middle", class: "rotulo" }, ROTULOS.topo);
+  criar("text", { x: meio, y: TAMANHO + 20, "text-anchor": "middle", class: "rotulo" }, ROTULOS.base);
+
+  // os rótulos laterais são girados para caberem na margem
+  const esq = -10;
+  const dir = TAMANHO + 10;
+  criar("text", {
+    x: esq, y: meio, "text-anchor": "middle",
+    transform: `rotate(-90 ${esq} ${meio})`, class: "rotulo",
+  }, ROTULOS.esquerda);
+  criar("text", {
+    x: dir, y: meio, "text-anchor": "middle",
+    transform: `rotate(90 ${dir} ${meio})`, class: "rotulo",
+  }, ROTULOS.direita);
+}
 
 // ---------- Etapa 2: perguntas ----------
 function mostrarPergunta() {
@@ -436,3 +462,4 @@ btnEnviar.addEventListener("click", enviar);
 
 desenharEixos();
 carregarPontos();
+desenharRotulos();
