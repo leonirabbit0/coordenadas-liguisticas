@@ -462,7 +462,6 @@ async function enviar() {
 // =====================================================================
 // 6. LIGANDO OS EVENTOS E INICIANDO
 // =====================================================================
-svg.addEventListener("click", abrirModal);
 btnParticipar.addEventListener("click", abrirModal);
 document.getElementById("modal-fechar").addEventListener("click", () => modal.close());
 document.getElementById("btn-comecar").addEventListener("click", comecar);
