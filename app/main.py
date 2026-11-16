@@ -1,3 +1,5 @@
+import os
+
 import hashlib
 import random
 import secrets
@@ -135,5 +137,5 @@ def listar_participantes(session: SessionDep):
     return session.exec(select(Participante)).all()
 
 
-# precisa ficar por último, depois de todas as rotas
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+if not os.getenv("VERCEL"):
+    app.mount("/", StaticFiles(directory="public", html=True), name="public")
